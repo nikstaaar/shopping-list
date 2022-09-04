@@ -1,6 +1,8 @@
 import create from "zustand";
+import { persist } from 'zustand/middleware'
 
-const useStore = create((set) => {
+const useStore = create(
+    persist((set) => {
   return {
     fetchedData: [],
     savedItems: [],
@@ -14,8 +16,8 @@ const useStore = create((set) => {
     handleDeleteItems: (savedItems, savedItem) => {set({savedItems: savedItems.filter(savedItems => savedItems._id !== savedItem._id)})},
     handleFilteredItems: (inputData) => {set({filteredItems: [inputData]})}
   };
-
-
-});
+},{
+    name: 'items'
+}));
 
 export default useStore;

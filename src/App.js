@@ -2,6 +2,7 @@ import React, { useEffect} from "react";
 import ShoppingList from "./ShoppingList"
 import SearchInput from "./SearchInput";
 import useStore from "./hooks/useStore";
+import GlobalStyle from "./GlobalStyles";
 
 function App() {
 
@@ -14,6 +15,7 @@ const handleData = useStore((state) => state.handleData);
 
 return(
   <>
+  <GlobalStyle></GlobalStyle>
   <ShoppingList></ShoppingList>
   <SearchInput></SearchInput>
   </>

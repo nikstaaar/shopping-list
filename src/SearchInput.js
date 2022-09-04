@@ -1,5 +1,6 @@
 import useStore from "./hooks/useStore";
 import { useState } from "react";
+import "./styles.css"
 
 function SearchInput (){
 
@@ -15,7 +16,6 @@ const handleSavedItems = useStore((state) => state.handleSavedItems)
 return(
     <>
     {searchItem.length > 0 ? <p>Add the Items you need to your Shopping-List.</p> : <p>Enter this Item you are looking for below.</p>}
-    <h2>search</h2>
     <input type = "text" placeholder = "input search" value = {searchItem} onChange = {(event)=>{
       setSearchItem (event.target.value);
       const items = data.filter((item) => item.name.de.includes(searchItem));
@@ -24,13 +24,13 @@ return(
         setFilteredItems([])
       }
     }}></input>
-    <ul>
+    <ul className="input-list">
     {filteredItems.map ((item)=> {
       return(
         <li key = {item._id}>
-          <div>
+          <div className = "input-list__item">
             <p>{item.name.de}</p>
-            <button onClick = {()=>{ 
+            <button className ="input-list__button" onClick = {()=>{ 
             handleSavedItems(savedItems, item)
             setSearchItem([])
             setFilteredItems([])
@@ -42,12 +42,13 @@ return(
         </li>
       )
     })}
-    </ul>
     {filteredItems.length === 0 && searchItem.length > 0 &&
         <p>
           There is no such Item...
         </p>
       }
+    </ul>
+    
     </>
 )}
 
