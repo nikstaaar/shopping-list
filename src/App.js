@@ -30,21 +30,26 @@ const [savedItems, setSavedItems] = useState([])
   
     <h2>search</h2>
     <input type = "text" placeholder = "input search" value = {searchItem} onChange = {(event)=>{
-      setSearchItem (event.target.value)
+      setSearchItem (event.target.value);
       const items = data.filter((item) => item.name.de.includes(searchItem));
       setFilteredItems(items);
+      if(event.target.value === ""){
+        setFilteredItems([])
+      }
     }}></input>
     <ul>
     {filteredItems.map ((item)=> {
-      console.log(filteredItems)
       return(
         <li key = {item._id}>
           <div>
             <p>{item.name.de}</p>
             <button onClick = {()=>{ 
-            setSavedItems(...item, filteredItems)
+            setSavedItems([...savedItems, item])
+            setSearchItem([])
+            setFilteredItems([])
             }}
-            >X
+            >
+            Add
             </button>
           </div>
         </li>
@@ -54,7 +59,16 @@ const [savedItems, setSavedItems] = useState([])
     <ul>
       {savedItems.map ((savedItem)=>{
         return(
-          <li>{savedItem.name.de}</li>
+          <li key = {savedItem._id}>
+            <p>{savedItem.name.de}</p>
+            <button onClick = {()=>{
+            setSavedItems([...savedItems])  
+            
+            }}
+            >
+            Delete
+            </button>
+          </li>
         )
       })}
     </ul>
