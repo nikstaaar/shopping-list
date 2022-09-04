@@ -62,8 +62,7 @@ const [savedItems, setSavedItems] = useState([])
           <li key = {savedItem._id}>
             <p>{savedItem.name.de}</p>
             <button onClick = {()=>{
-            setSavedItems([...savedItems])  
-            
+            setSavedItems(savedItems.filter(savedItems => savedItems._id !== savedItem._id))  
             }}
             >
             Delete
