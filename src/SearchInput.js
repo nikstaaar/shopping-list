@@ -13,7 +13,9 @@ const handleSavedItems = useStore((state) => state.handleSavedItems)
 
 
 return(
-    <><h2>search</h2>
+    <>
+    {searchItem.length > 0 ? <p>Add the Items you need to your Shopping-List.</p> : <p>Enter this Item you are looking for below.</p>}
+    <h2>search</h2>
     <input type = "text" placeholder = "input search" value = {searchItem} onChange = {(event)=>{
       setSearchItem (event.target.value);
       const items = data.filter((item) => item.name.de.includes(searchItem));
@@ -41,6 +43,11 @@ return(
       )
     })}
     </ul>
+    {filteredItems.length === 0 && searchItem.length > 0 &&
+        <p>
+          There is no such Item...
+        </p>
+      }
     </>
 )}
 

@@ -9,6 +9,11 @@ const handleDeleteItems = useStore((state) => state.handleDeleteItems)
 return (
     <>
     <h1>Shopping List</h1>
+    {savedItems.length === 0 &&
+        <p>
+          Your Shopping-List is Emtpy
+        </p>
+      }
     <ul>
       {savedItems.map ((savedItem)=>{
         return(

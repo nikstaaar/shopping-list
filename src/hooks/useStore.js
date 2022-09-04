@@ -4,13 +4,15 @@ const useStore = create((set) => {
   return {
     fetchedData: [],
     savedItems: [],
-    handleData: (inputData) => {
-      set({ fetchedData: inputData });
+    filteredItems: [],
+    handleData: (data) => {
+      set({ fetchedData: data });
     },
-    handleSavedItems: (inputData1, inputData2) => {
-       set({savedItems: [...inputData1, inputData2]}) 
+    handleSavedItems: (savedItems, item) => {
+       set({savedItems: [...savedItems, item]}) 
     },
-    handleDeleteItems: (savedItems, savedItem) => {set({savedItems: savedItems.filter(savedItems => savedItems._id !== savedItem._id)})}
+    handleDeleteItems: (savedItems, savedItem) => {set({savedItems: savedItems.filter(savedItems => savedItems._id !== savedItem._id)})},
+    handleFilteredItems: (inputData) => {set({filteredItems: [inputData]})}
   };
 
 
