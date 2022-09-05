@@ -1,6 +1,6 @@
-import useStore from "./hooks/useStore";
+import useStore from "../hooks/useStore";
 import { useState } from "react";
-import "./styles.css"
+import "../styles.css"
 
 function SearchInput (){
 
@@ -15,8 +15,8 @@ const handleSavedItems = useStore((state) => state.handleSavedItems)
 
 return(
     <>
-    {searchItem.length > 0 ? <p>Add the Items you need to your Shopping-List.</p> : <p>Enter this Item you are looking for below.</p>}
-    <input type = "text" placeholder = "input search" value = {searchItem} onChange = {(event)=>{
+    {searchItem.length > 0 ? <p>Add the Items you need to your Shopping-List.</p> : <p>Enter the Item you are looking for below.</p>}
+    <input type = "text" placeholder = "..." value = {searchItem} onChange = {(event)=>{
       setSearchItem (event.target.value);
       const items = data.filter((item) => item.name.de.includes(searchItem));
       setFilteredItems(items);

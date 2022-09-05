@@ -1,5 +1,5 @@
-import useStore from "./hooks/useStore";
-import "./styles.css"
+import useStore from "../hooks/useStore";
+import "../styles.css"
 
 function ShoppingList() {
   

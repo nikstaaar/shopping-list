@@ -1,6 +1,6 @@
 import React, { useEffect} from "react";
-import ShoppingList from "./ShoppingList"
-import SearchInput from "./SearchInput";
+import ShoppingList from "./components/ShoppingList";
+import SearchInput from "./components/SearchInput";
 import useStore from "./hooks/useStore";
 import GlobalStyle from "./GlobalStyles";
 
