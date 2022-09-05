@@ -70,6 +70,14 @@
     background-color: #9dbef4;
 }
 
+.input-list__button:focus {
+    background-color: #f00;
+
+}
+.input-list__button:hover{
+    color: rgb(92, 0, 240);
+}
+
 .shopping-list__button{
     position: absolute;
     right: -10px;
@@ -83,6 +91,15 @@
     border: none;
     color: #fff;
     background-color: #a0beee;
+
+
 }
 
+.shopping-list__button:focus {
+    background-color: #f00;
 
+}
+
+.shopping-list__button:hover{
+    color: aquamarine;
+}

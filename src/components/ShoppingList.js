@@ -9,7 +9,7 @@ const handleDeleteItems = useStore((state) => state.handleDeleteItems)
 
 return (
     <>
-    <h1>Shopping List</h1>
+    <h1>SHOPPING-LIST</h1>
     <ul className="shopping-list">
       {savedItems.map ((savedItem)=>{
         return(
