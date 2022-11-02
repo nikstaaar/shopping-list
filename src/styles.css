@@ -1,0 +1,105 @@
+
+
+.input-list{
+    display: flex;
+    flex-wrap: wrap;
+    background: floralwhite;
+    padding: 2em;
+    padding-left: 1em;
+    gap: 1.5em;
+    list-style-type: none;
+}
+
+.shopping-list{
+    display: flex;
+    flex-wrap: wrap;
+    background: floralwhite;;
+    padding: 2em;
+    padding-left: 1em;
+    gap: 1.5em;
+    list-style-type: none;
+}
+
+.input-list__item{
+    position: relative;
+    display: flex;
+    outline: none;
+    border-radius: 3px;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 16px;
+    padding: 2px 16px;
+    height: 32px;
+    min-width: 60px;
+    min-height: 32px;
+    border: none;
+    color: #fff;
+    background-color: #4f545c;
+}
+
+.shopping-list__item{
+    position: relative;
+    display: flex;
+    outline: none;
+    border-radius: 3px;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 16px;
+    padding: 2px 16px;
+    height: 32px;
+    min-width: 60px;
+    min-height: 32px;
+    border: none;
+    color: #fff;
+    background-color: lightseagreen
+}
+
+
+.input-list__button{
+    position: absolute;
+    right: -10px;
+    top: -5px;
+    outline: none;
+    cursor: pointer;
+    border-radius: 3px;
+    font-size: 10px;
+    font-weight: 500;
+    padding: 2px 16px;
+    border: none;
+    color: #fff;
+    background-color: #9dbef4;
+}
+
+.input-list__button:focus {
+    background-color: #f00;
+
+}
+.input-list__button:hover{
+    color: rgb(92, 0, 240);
+}
+
+.shopping-list__button{
+    position: absolute;
+    right: -10px;
+    top: -5px;
+    outline: none;
+    cursor: pointer;
+    border-radius: 3px;
+    font-size: 10px;
+    font-weight: 500;
+    padding: 2px 16px;  
+    border: none;
+    color: #fff;
+    background-color: #a0beee;
+
+
+}
+
+.shopping-list__button:focus {
+    background-color: #f00;
+
+}
+
+.shopping-list__button:hover{
+    color: aquamarine;
+}
